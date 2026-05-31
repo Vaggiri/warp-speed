@@ -60,18 +60,22 @@ The fastest way to install `warp-speed` globally on your machine.
 
 **macOS / Linux (Bash/Zsh):**
 ```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/warp-speed/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/Vaggiri/warp-speed/main/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/YOUR_USERNAME/warp-speed/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/Vaggiri/warp-speed/main/install.ps1 | iex
 ```
-> **Note**: Be sure to replace `YOUR_USERNAME` with your actual GitHub username once you push the repository!
+
+**Windows (CMD):**
+```cmd
+powershell -Command "irm https://raw.githubusercontent.com/Vaggiri/warp-speed/main/install.ps1 | iex"
+```
 
 ### Manual Compilation
 If you prefer to build from source:
-1. Clone the repository: `git clone https://github.com/YOUR_USERNAME/warp-speed.git`
+1. Clone the repository: `git clone https://github.com/Vaggiri/warp-speed.git`
 2. Enter the directory: `cd warp-speed`
 3. Compile the binary: `go build -o warp-speed`
 4. Run the local install script: `./install.sh` (or `.\install.ps1` on Windows)
