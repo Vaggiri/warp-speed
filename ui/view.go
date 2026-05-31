@@ -16,10 +16,17 @@ func (m Model) View() string {
 
 	var sb strings.Builder
 
+	// ASCII Logo
+	logo := ` __      __                ___                   _
+ \ \    / /_ _ _ _ _ __   / __| _ __  ___ ___ __| |
+  \ \/\/ / _` + "`" + ` | '_| '_ \  \__ \| '_ \/ -_) -_) _` + "`" + ` |
+   \_/\_/\__,_|_| | .__/  |___/| .__/\___\___\__,_|
+                  |_|          |_|`
+
 	// Global Header
-	sb.WriteString(HeaderStyle.Render(" WARP-SPEED // Enterprise Edge CLI "))
-	sb.WriteString("\n")
-	sb.WriteString(lipgloss.NewStyle().Foreground(ColorBorder).Render(" Developed by Girisudhan V | VAG CREATIONS "))
+	sb.WriteString(HeaderStyle.Render(logo))
+	sb.WriteString("\n\n")
+	sb.WriteString(lipgloss.NewStyle().Foreground(lipgloss.Color("#9CA3AF")).Render(" Developed by Girisudhan V | VAG CREATIONS "))
 	sb.WriteString("\n\n")
 
 	// Screen Routing
