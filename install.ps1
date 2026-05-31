@@ -21,9 +21,15 @@ Write-Host "[INFO] Starting installation of warp-speed..." -ForegroundColor Cyan
 
 # 1. Check if binary exists in current directory
 if (-Not (Test-Path -Path ".\$binaryName")) {
-    Write-Host "[ERROR] Could not find $binaryName in the current directory." -ForegroundColor Red
-    Write-Host "Please run 'go build -o $binaryName' first." -ForegroundColor Yellow
-    exit 1
+    Write-Host "[INFO] Could not find $binaryName locally. Attempting to download latest release from GitHub..." -ForegroundColor Yellow
+    $downloadUrl = "https://github.com/Vaggiri/warp-speed/releases/latest/download/warp-speed-windows-amd64.exe"
+    try {
+        Invoke-WebRequest -Uri $downloadUrl -OutFile ".\$binaryName"
+        Write-Host "[SUCCESS] Successfully downloaded warp-speed-windows-amd64.exe" -ForegroundColor Green
+    } catch {
+        Write-Host "[ERROR] Failed to download binary. Make sure you have published the GitHub Release!" -ForegroundColor Red
+        exit 1
+    }
 }
 
 # 2. Create the installation directory if it doesn't exist

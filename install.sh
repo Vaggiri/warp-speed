@@ -11,9 +11,22 @@ echo -e "\033[1;36m🚀 Starting installation of warp-speed...\033[0m"
 
 # 1. Check if binary exists (assuming they might have compiled it without the .exe extension for unix)
 if [ ! -f "./$BINARY_NAME" ]; then
-    echo -e "\033[1;31m❌ Error: Could not find $BINARY_NAME in the current directory.\033[0m"
-    echo -e "\033[1;33mPlease run 'go build -o $BINARY_NAME' first.\033[0m"
-    exit 1
+    echo -e "\033[1;33m[INFO] Could not find $BINARY_NAME locally. Attempting to download latest release from GitHub...\033[0m"
+    
+    # Detect OS & Arch
+    OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
+    ARCH="$(uname -m)"
+    if [ "$ARCH" = "x86_64" ]; then ARCH="amd64"; fi
+    if [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then ARCH="arm64"; fi
+    
+    DOWNLOAD_URL="https://github.com/Vaggiri/warp-speed/releases/latest/download/warp-speed-${OS}-${ARCH}"
+    
+    if curl -sL --fail "$DOWNLOAD_URL" -o "./$BINARY_NAME"; then
+        echo -e "\033[1;32m[SUCCESS] Downloaded warp-speed-${OS}-${ARCH}\033[0m"
+    else
+        echo -e "\033[1;31m[ERROR] Failed to download binary. Make sure you have published the GitHub Release!\033[0m"
+        exit 1
+    fi
 fi
 
 # 2. Create the local bin directory if it doesn't exist
