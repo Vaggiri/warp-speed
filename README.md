@@ -55,31 +55,26 @@ warp-speed/
 
 ## 🚀 Installation & Deployment
 
-### Quick Start (Local Compilation)
-1. Clone the repository.
-2. Ensure you have Go installed.
-3. Run the following command in the project root:
-   ```bash
-   go build -o warp-speed
-   ```
-4. Run the executable: `./warp-speed` (or `.\warp-speed.exe` on Windows).
+### One-Line Install (Recommended)
+The fastest way to install `warp-speed` globally on your machine.
 
-### Global Installation (Developer Standard)
-If you want to run `warp-speed` from anywhere on your system, we provide professional installation scripts that automatically inject the binary into your system `PATH`.
-
-**For Windows (PowerShell):**
-```powershell
-.\install.ps1
-```
-*This creates a `%USERPROFILE%\.warp-speed\bin` directory, copies the executable, and updates your User PATH.*
-
-**For macOS / Linux (Bash/Zsh):**
+**macOS / Linux (Bash/Zsh):**
 ```bash
-./install.sh
+curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/warp-speed/main/install.sh | bash
 ```
-*This places the binary in `~/.local/bin` and updates your `.bashrc` or `.zshrc`.*
 
-*(For more details on `PATH` management and symlinking vs. copying, see `INSTALL.md`).*
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/YOUR_USERNAME/warp-speed/main/install.ps1 | iex
+```
+> **Note**: Be sure to replace `YOUR_USERNAME` with your actual GitHub username once you push the repository!
+
+### Manual Compilation
+If you prefer to build from source:
+1. Clone the repository: `git clone https://github.com/YOUR_USERNAME/warp-speed.git`
+2. Enter the directory: `cd warp-speed`
+3. Compile the binary: `go build -o warp-speed`
+4. Run the local install script: `./install.sh` (or `.\install.ps1` on Windows)
 
 ---
 
