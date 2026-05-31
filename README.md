@@ -3,6 +3,8 @@
 
 `warp-speed` is a high-performance, enterprise-grade network diagnostic and telemetry CLI tool built in Go. It leverages the power of Cobra for command routing and the Charm.sh ecosystem (Bubble Tea, Lipgloss, Bubbles) to deliver a stunning, interactive Terminal User Interface (TUI).
 
+![Menu](Screenshot/menu.png)
+
 ---
 
 ## 🌟 Key Features
@@ -14,8 +16,16 @@
     *   Google DNS (8.8.8.8) Latency
     *   Selected Node Latency
     *   Current Network Interface Ingress & Egress Bandwidth
+    
+    ![Monitor](Screenshot/real-time-test.png)
+    
 4. **Advanced Target Selection**: Fetch a global list of edge nodes and use fuzzy-searching to pinpoint the exact server you want to test against.
+
+    ![Select Server](Screenshot/select%20server.png)
+    
 5. **Local History Archive**: Automatically persists the results of your last 100 speed tests to a local JSON database (`~/.warp-speed/history.json`), viewable directly in the terminal via an interactive data table.
+
+    ![History](Screenshot/history.png)
 
 ---
 
@@ -90,6 +100,8 @@ When you launch `warp-speed`, you are presented with the Main Menu. Use the `Up`
 *   If you haven't selected a server yet, selecting this will intelligently redirect you to the **Select Server** screen.
 *   Once a server is selected, it will run a sequential diagnostic (Ping -> Download -> Upload) and display a progress bar.
 *   Upon completion, the results are automatically saved to your local history.
+
+![Speed Test](Screenshot/test.png)
 
 ### 2. Real-Time Status Monitor
 *   This mode continuously polls your active network connections.
