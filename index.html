@@ -338,6 +338,9 @@
                     <button class="tab" onclick="switchTab('linux')">Linux</button>
                     <button class="tab" onclick="switchTab('mac')">Mac</button>
                 </div>
+                <div id="install-instructions" style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.75rem;">
+                    Press <strong style="color: #fff;">Win + R</strong>, type <strong style="color: #fff;">cmd</strong>, and hit Enter. Then paste this command:
+                </div>
                 <div class="code-block" id="code-content">
                     <code id="install-cmd">powershell -Command "irm https://raw.githubusercontent.com/Vaggiri/warp-speed/main/install.ps1 | iex"</code>
                     <button class="copy-btn" onclick="copyCode()" title="Copy to clipboard">
@@ -416,10 +419,17 @@
             'mac': 'curl -sSL https://raw.githubusercontent.com/Vaggiri/warp-speed/main/install.sh | bash'
         };
 
+        const instructions = {
+            'win': 'Press <strong style="color: #fff;">Win + R</strong>, type <strong style="color: #fff;">cmd</strong>, and hit Enter. Then paste this command:',
+            'linux': 'Press <strong style="color: #fff;">Ctrl + Alt + T</strong> to open your terminal. Then paste this command:',
+            'mac': 'Press <strong style="color: #fff;">Cmd + Space</strong>, type <strong style="color: #fff;">Terminal</strong>, and hit Enter. Then paste this command:'
+        };
+
         function switchTab(os) {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
             document.getElementById('install-cmd').innerText = commands[os];
+            document.getElementById('install-instructions').innerHTML = instructions[os];
         }
 
         function copyCode() {
