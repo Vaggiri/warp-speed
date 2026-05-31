@@ -18,6 +18,8 @@ func (m Model) View() string {
 
 	// Global Header
 	sb.WriteString(HeaderStyle.Render(" WARP-SPEED // Enterprise Edge CLI "))
+	sb.WriteString("\n")
+	sb.WriteString(lipgloss.NewStyle().Foreground(ColorBorder).Render(" Developed by Girisudhan V | VAG CREATIONS "))
 	sb.WriteString("\n\n")
 
 	// Screen Routing

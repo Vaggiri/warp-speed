@@ -1,4 +1,5 @@
 # Warp-Speed CLI 🚀
+*Developed by Girisudhan V | A VAG CREATIONS Project*
 
 `warp-speed` is a high-performance, enterprise-grade network diagnostic and telemetry CLI tool built in Go. It leverages the power of Cobra for command routing and the Charm.sh ecosystem (Bubble Tea, Lipgloss, Bubbles) to deliver a stunning, interactive Terminal User Interface (TUI).
 
@@ -108,7 +109,10 @@ When you launch `warp-speed`, you are presented with the Main Menu. Use the `Up`
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing & Credits
+
+**Author**: Girisudhan V  
+**Studio**: VAG CREATIONS  
 
 Contributions, issues, and feature requests are welcome! 
 If you plan to add new screens, please follow the Elm Architecture pattern established in `ui/model.go` and define your distinct views in `ui/view.go`. 
