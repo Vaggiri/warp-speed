@@ -13,12 +13,12 @@
 
   <Identity
     Name="warp-speed"
-    Publisher="CN=Admin"
+    Publisher="CN=1C88B6FE-A041-43A3-8B8E-481662B4C183"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>warp-speed</DisplayName>
-    <PublisherDisplayName>Admin</PublisherDisplayName>
+    <PublisherDisplayName>VAG CREATIONS</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
